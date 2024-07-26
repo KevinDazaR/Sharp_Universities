@@ -190,7 +190,7 @@ hr{
   background-color: #5bcca480;
   padding: 5px 10px;
   border-radius: 50px;
-  z-index: 9999;
+  z-index: 2;
   position: relative;
 }
 

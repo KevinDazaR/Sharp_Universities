@@ -35,37 +35,35 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-
             <!-- ========== LEFT- Menu ========== -->
-           @* <Components.LeftSideMenu/>
-           <LeftSideMenu/> *@
-            @await Html.PartialAsync("_LeftSideMenu")
+
+            @await Html.PartialAsync("../Shared/Components/Partials/_LeftSideMenu")
             
-
+            
             <!-- ========== Left menu End ========== -->
-
-
-
-            <!-- ========== Topbar Start ========== -->
-             @await Html.PartialAsync("_Navbar")
-
-            <!-- ========== Topbar End ========== -->
 
             <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-          
+            <div class="content-page">
+                <!-- ========== Topbar Start ========== -->
+                @await Html.PartialAsync("../Shared/Components/Partials/_Navbar")
 
-            <!-- ============================================================== -->
-            <!-- Footer Start -->
-            @await Html.PartialAsync("Footer")
-            <!-- end Footer -->
+                <!-- ========== Topbar End ========== -->
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+                <!-- ============================================================== -->
+                <!-- Footer Start -->
+                @await Html.PartialAsync("../Shared/Components/Partials/_Footer")
+                <!-- end Footer -->
+
+            </div>
 
             <!-- End Page content -->
             <!-- ============================================================== -->
+
+          
 
         </div>
      
