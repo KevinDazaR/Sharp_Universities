@@ -4,10 +4,10 @@ namespace HTML_Componentes.Models
     {
         public int Id { get; set; }
         public string ? Nombre { get; set; }
-        public int ? CarreraId { get; set; }
+        public int ? Carrera_Id { get; set; }
         public Carrera?  Carrera { get; set; }
-        public ICollection<Estudiante_Materia> EstudiantesMaterias { get; set; } = new List<Estudiante_Materia>();
-        public ICollection<Profesor_Materia> ProfesoresMaterias { get; set; } = new List<Profesor_Materia>();
+        public ICollection<Estudiante_Materia> Estudiantes_Materias { get; set; } = new List<Estudiante_Materia>();
+        public ICollection<Profesor_Materia> Profesores_Materias { get; set; } = new List<Profesor_Materia>();
     }
 
 }

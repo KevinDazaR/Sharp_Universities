@@ -1,48 +1,69 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿<!DOCTYPE html>
+<html lang="en" data-topbar-color="dark">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewData["Title"] - HTML_Componentes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="~/images/favicon.ico">
+    
+        <link rel="stylesheet" href="~/css/blog.css">
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
+        <!-- Plugins css -->
+        <link href="~/css/flatpickr.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/selectize.bootstrap3.css" rel="stylesheet" type="text/css" />
 
-a {
-  color: #0077cc;
-}
+        <!-- Theme Config Js -->
+        <script src="~/js/head.js"></script>
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+        <!-- Bootstrap css -->
+        <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
+        <!-- App css -->    
+        <link href="~/css/app.min.css" rel="stylesheet" type="text/css" />
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
-}
+        <!-- Icons css -->
+        <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <!-- Begin page -->
+        <div id="wrapper">
+            <!-- ========== LEFT- Menu ========== -->
+            @await Html.PartialAsync("./Components/Partials/_LeftSideMenu")
+            <!-- ========== Left menu End ========== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+            <div class="content-page">
+                <!-- ========== Topbar Start ========== -->
+                @await Html.PartialAsync("./Components/Partials/_Navbar")
+                <!-- ========== Topbar End ========== -->
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+                <!-- ============================================================== -->
+                <!-- Footer Start -->
+                @await Html.PartialAsync("./Components/Partials/_Footer")
+                <!-- end Footer -->
+            </div>
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- END wrapper -->
+        <!-- Vendor js -->
+        <script src="~/js/vendor.min.js"></script>
+        <!-- App js -->
+        <script src="~/js/app.min.js"></script>
+        <!-- Plugins js-->
+        <script src="~/js/flatpickr.min.js"></script>
+        <script src="~/js/apexcharts.min.js"></script>
+        <script src="~/js/selectize.min.js"></script>
+        <!-- Dashboar 1 init js-->
+        <script src="~/js/pages/dashboard-1.init.js"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

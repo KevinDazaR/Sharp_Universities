@@ -5,7 +5,7 @@ namespace HTML_Componentes.Infrastructure.Data
 {
     public class BaseContext : DbContext
     {
-         public BaseContext(DbContextOptions<BaseContext> options) : base(options)
+        public BaseContext(DbContextOptions<BaseContext> options) : base(options)
         {
         }
         
@@ -17,12 +17,12 @@ namespace HTML_Componentes.Infrastructure.Data
         public DbSet<Semestre> Semestres { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Inscripcion> Inscripciones { get; set; }
-        public DbSet<Estudiante_Materia> EstudiantesMaterias { get; set; }
-        public DbSet<Profesor_Materia> ProfesoresMaterias { get; set; }
-        public DbSet<Carrera_Materia> CarrerasMaterias { get; set; }
-        public DbSet<Profesor_Universidad> ProfesoresUniversidades { get; set; }
-        public DbSet<Carrera_Universidad> CarrerasUniversidades { get; set; }
-        public DbSet<Universidad_Inscripcion> UniversidadesInscripciones { get; set; }
+        public DbSet<Estudiante_Materia> Estudiantes_Materias { get; set; }
+        public DbSet<Profesor_Materia> Profesores_Materias { get; set; }
+        public DbSet<Carrera_Materia> Carreras_Materias { get; set; }
+        public DbSet<Profesor_Universidad> Profesores_Universidades { get; set; }
+        public DbSet<Carrera_Universidad> Carreras_Universidades { get; set; }
+        public DbSet<Universidad_Inscripcion> Universidades_Inscripciones { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

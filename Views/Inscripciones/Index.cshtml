@@ -1,0 +1,53 @@
+@model IEnumerable<HTML_Componentes.Models.Inscripcion>
+
+@{
+    ViewData["Title"] = "Listado de Inscripciones";
+}
+
+<h2>Listado de Inscripciones</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Estudiante</th>
+            <th>Apellido Estudiante</th>
+            <th>Correo Estudiante</th>
+            <th>Teléfono Estudiante</th>
+            <th>Carrera</th>
+            <th>Materia</th>
+            <th>Semestre</th>
+            <th>Año</th>
+            <th>Nombre Profesor</th>
+            <th>Apellido Profesor</th>
+            <th>Correo Profesor</th>
+            <th>Teléfono Profesor</th>
+            <th>Decano Universidad</th>
+            <th>Universidad</th>
+            <th>Estado Inscripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var inscripcion in Model)
+        {
+            <tr>
+                <td>@inscripcion.Id</td>
+                <td>@inscripcion.Estudiante.Nombres</td>
+                <td>@inscripcion.Estudiante.Apellidos</td>
+                <td>@inscripcion.Estudiante.Correo</td>
+                <td>@inscripcion.Estudiante.Telefono</td>
+                <td>@inscripcion.Carrera.Nombre</td>
+                <td>@inscripcion.Materia.Nombre</td>
+                <td>@inscripcion.Semestre.Numero</td>
+                <td>@inscripcion.Semestre.Año</td>
+                <td>@inscripcion.Profesor.Nombres</td>
+                <td>@inscripcion.Profesor.Apellidos</td>
+                <td>@inscripcion.Profesor.Correo</td>
+                <td>@inscripcion.Profesor.Telefono</td>
+                <td>@inscripcion.Universidades_Inscripciones.FirstOrDefault()?.Universidad.Decano</td>
+                <td>@inscripcion.Universidades_Inscripciones.FirstOrDefault()?.Universidad.Nombre</td>
+                <td>@inscripcion.Estado.Nombre_Estado</td>
+            </tr>
+        }
+    </tbody>
+</table>

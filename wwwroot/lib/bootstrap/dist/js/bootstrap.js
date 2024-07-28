@@ -218,7 +218,7 @@
    * Trick to restart an element's animation
    *
    * @param {HTMLElement} element
-   * @return void
+   * @return Task
    *
    * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
    */
@@ -3393,7 +3393,7 @@
       if (isVisible(this)) {
         this.focus();
       }
-    }); // avoid conflict when clicking a toggler of an offcanvas, while another is open
+    }); // aTask conflict when clicking a toggler of an offcanvas, while another is open
 
     const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
 

@@ -196,7 +196,7 @@
    * Trick to restart an element's animation
    *
    * @param {HTMLElement} element
-   * @return void
+   * @return Task
    *
    * @see https://www.charistheo.io/blog/2021/02/restart-a-css-animation-with-javascript/#restarting-a-css-animation
    */
@@ -2080,7 +2080,7 @@
 
   var round$1 = Math.round;
   function getBoundingClientRect(element, includeScale) {
-    if (includeScale === void 0) {
+    if (includeScale === Task 0) {
       includeScale = false;
     }
 
@@ -2323,7 +2323,7 @@
     var state = _ref2.state,
         options = _ref2.options;
     var _options$element = options.element,
-        arrowElement = _options$element === void 0 ? '[data-popper-arrow]' : _options$element;
+        arrowElement = _options$element === Task 0 ? '[data-popper-arrow]' : _options$element;
 
     if (arrowElement == null) {
       return;
@@ -2391,9 +2391,9 @@
 
     var _ref3 = roundOffsets === true ? roundOffsetsByDPR(offsets) : typeof roundOffsets === 'function' ? roundOffsets(offsets) : offsets,
         _ref3$x = _ref3.x,
-        x = _ref3$x === void 0 ? 0 : _ref3$x,
+        x = _ref3$x === Task 0 ? 0 : _ref3$x,
         _ref3$y = _ref3.y,
-        y = _ref3$y === void 0 ? 0 : _ref3$y;
+        y = _ref3$y === Task 0 ? 0 : _ref3$y;
 
     var hasX = offsets.hasOwnProperty('x');
     var hasY = offsets.hasOwnProperty('y');
@@ -2450,11 +2450,11 @@
     var state = _ref4.state,
         options = _ref4.options;
     var _options$gpuAccelerat = options.gpuAcceleration,
-        gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat,
+        gpuAcceleration = _options$gpuAccelerat === Task 0 ? true : _options$gpuAccelerat,
         _options$adaptive = options.adaptive,
-        adaptive = _options$adaptive === void 0 ? true : _options$adaptive,
+        adaptive = _options$adaptive === Task 0 ? true : _options$adaptive,
         _options$roundOffsets = options.roundOffsets,
-        roundOffsets = _options$roundOffsets === void 0 ? true : _options$roundOffsets;
+        roundOffsets = _options$roundOffsets === Task 0 ? true : _options$roundOffsets;
 
     var commonStyles = {
       placement: getBasePlacement(state.placement),
@@ -2504,9 +2504,9 @@
         instance = _ref.instance,
         options = _ref.options;
     var _options$scroll = options.scroll,
-        scroll = _options$scroll === void 0 ? true : _options$scroll,
+        scroll = _options$scroll === Task 0 ? true : _options$scroll,
         _options$resize = options.resize,
-        resize = _options$resize === void 0 ? true : _options$resize;
+        resize = _options$resize === Task 0 ? true : _options$resize;
     var window = getWindow(state.elements.popper);
     var scrollParents = [].concat(state.scrollParents.reference, state.scrollParents.popper);
 
@@ -2631,7 +2631,7 @@
 
     var html = getDocumentElement(element);
     var winScroll = getWindowScroll(element);
-    var body = (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body;
+    var body = (_element$ownerDocumen = element.ownerDocument) == null ? Task 0 : _element$ownerDocumen.body;
     var width = max(html.scrollWidth, html.clientWidth, body ? body.scrollWidth : 0, body ? body.clientWidth : 0);
     var height = max(html.scrollHeight, html.clientHeight, body ? body.scrollHeight : 0, body ? body.clientHeight : 0);
     var x = -winScroll.scrollLeft + getWindowScrollBarX(element);
@@ -2682,12 +2682,12 @@
   function listScrollParents(element, list) {
     var _element$ownerDocumen;
 
-    if (list === void 0) {
+    if (list === Task 0) {
       list = [];
     }
 
     var scrollParent = getScrollParent(element);
-    var isBody = scrollParent === ((_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body);
+    var isBody = scrollParent === ((_element$ownerDocumen = element.ownerDocument) == null ? Task 0 : _element$ownerDocumen.body);
     var win = getWindow(scrollParent);
     var target = isBody ? [win].concat(win.visualViewport || [], isScrollParent(scrollParent) ? scrollParent : []) : scrollParent;
     var updatedList = list.concat(target);
@@ -2830,23 +2830,23 @@
   }
 
   function detectOverflow(state, options) {
-    if (options === void 0) {
+    if (options === Task 0) {
       options = {};
     }
 
     var _options = options,
         _options$placement = _options.placement,
-        placement = _options$placement === void 0 ? state.placement : _options$placement,
+        placement = _options$placement === Task 0 ? state.placement : _options$placement,
         _options$boundary = _options.boundary,
-        boundary = _options$boundary === void 0 ? clippingParents : _options$boundary,
+        boundary = _options$boundary === Task 0 ? clippingParents : _options$boundary,
         _options$rootBoundary = _options.rootBoundary,
-        rootBoundary = _options$rootBoundary === void 0 ? viewport : _options$rootBoundary,
+        rootBoundary = _options$rootBoundary === Task 0 ? viewport : _options$rootBoundary,
         _options$elementConte = _options.elementContext,
-        elementContext = _options$elementConte === void 0 ? popper : _options$elementConte,
+        elementContext = _options$elementConte === Task 0 ? popper : _options$elementConte,
         _options$altBoundary = _options.altBoundary,
-        altBoundary = _options$altBoundary === void 0 ? false : _options$altBoundary,
+        altBoundary = _options$altBoundary === Task 0 ? false : _options$altBoundary,
         _options$padding = _options.padding,
-        padding = _options$padding === void 0 ? 0 : _options$padding;
+        padding = _options$padding === Task 0 ? 0 : _options$padding;
     var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
     var altContext = elementContext === popper ? reference : popper;
     var referenceElement = state.elements.reference;
@@ -2885,7 +2885,7 @@
   }
 
   function computeAutoPlacement(state, options) {
-    if (options === void 0) {
+    if (options === Task 0) {
       options = {};
     }
 
@@ -2896,7 +2896,7 @@
         padding = _options.padding,
         flipVariations = _options.flipVariations,
         _options$allowedAutoP = _options.allowedAutoPlacements,
-        allowedAutoPlacements = _options$allowedAutoP === void 0 ? placements : _options$allowedAutoP;
+        allowedAutoPlacements = _options$allowedAutoP === Task 0 ? placements : _options$allowedAutoP;
     var variation = getVariation(placement);
     var placements$1 = variation ? flipVariations ? variationPlacements : variationPlacements.filter(function (placement) {
       return getVariation(placement) === variation;
@@ -2943,16 +2943,16 @@
     }
 
     var _options$mainAxis = options.mainAxis,
-        checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis,
+        checkMainAxis = _options$mainAxis === Task 0 ? true : _options$mainAxis,
         _options$altAxis = options.altAxis,
-        checkAltAxis = _options$altAxis === void 0 ? true : _options$altAxis,
+        checkAltAxis = _options$altAxis === Task 0 ? true : _options$altAxis,
         specifiedFallbackPlacements = options.fallbackPlacements,
         padding = options.padding,
         boundary = options.boundary,
         rootBoundary = options.rootBoundary,
         altBoundary = options.altBoundary,
         _options$flipVariatio = options.flipVariations,
-        flipVariations = _options$flipVariatio === void 0 ? true : _options$flipVariatio,
+        flipVariations = _options$flipVariatio === Task 0 ? true : _options$flipVariatio,
         allowedAutoPlacements = options.allowedAutoPlacements;
     var preferredPlacement = state.options.placement;
     var basePlacement = getBasePlacement(preferredPlacement);
@@ -3065,7 +3065,7 @@
   };
 
   function getSideOffsets(overflow, rect, preventedOffsets) {
-    if (preventedOffsets === void 0) {
+    if (preventedOffsets === Task 0) {
       preventedOffsets = {
         x: 0,
         y: 0
@@ -3149,7 +3149,7 @@
         options = _ref2.options,
         name = _ref2.name;
     var _options$offset = options.offset,
-        offset = _options$offset === void 0 ? [0, 0] : _options$offset;
+        offset = _options$offset === Task 0 ? [0, 0] : _options$offset;
     var data = placements.reduce(function (acc, placement) {
       acc[placement] = distanceAndSkiddingToXY(placement, state.rects, offset);
       return acc;
@@ -3208,17 +3208,17 @@
         options = _ref.options,
         name = _ref.name;
     var _options$mainAxis = options.mainAxis,
-        checkMainAxis = _options$mainAxis === void 0 ? true : _options$mainAxis,
+        checkMainAxis = _options$mainAxis === Task 0 ? true : _options$mainAxis,
         _options$altAxis = options.altAxis,
-        checkAltAxis = _options$altAxis === void 0 ? false : _options$altAxis,
+        checkAltAxis = _options$altAxis === Task 0 ? false : _options$altAxis,
         boundary = options.boundary,
         rootBoundary = options.rootBoundary,
         altBoundary = options.altBoundary,
         padding = options.padding,
         _options$tether = options.tether,
-        tether = _options$tether === void 0 ? true : _options$tether,
+        tether = _options$tether === Task 0 ? true : _options$tether,
         _options$tetherOffset = options.tetherOffset,
-        tetherOffset = _options$tetherOffset === void 0 ? 0 : _options$tetherOffset;
+        tetherOffset = _options$tetherOffset === Task 0 ? 0 : _options$tetherOffset;
     var overflow = detectOverflow(state, {
       boundary: boundary,
       rootBoundary: rootBoundary,
@@ -3340,7 +3340,7 @@
 
 
   function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
-    if (isFixed === void 0) {
+    if (isFixed === Task 0) {
       isFixed = false;
     }
 
@@ -3471,17 +3471,17 @@
   }
 
   function popperGenerator(generatorOptions) {
-    if (generatorOptions === void 0) {
+    if (generatorOptions === Task 0) {
       generatorOptions = {};
     }
 
     var _generatorOptions = generatorOptions,
         _generatorOptions$def = _generatorOptions.defaultModifiers,
-        defaultModifiers = _generatorOptions$def === void 0 ? [] : _generatorOptions$def,
+        defaultModifiers = _generatorOptions$def === Task 0 ? [] : _generatorOptions$def,
         _generatorOptions$def2 = _generatorOptions.defaultOptions,
-        defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
+        defaultOptions = _generatorOptions$def2 === Task 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
     return function createPopper(reference, popper, options) {
-      if (options === void 0) {
+      if (options === Task 0) {
         options = defaultOptions;
       }
 
@@ -3570,7 +3570,7 @@
             var _state$orderedModifie = state.orderedModifiers[index],
                 fn = _state$orderedModifie.fn,
                 _state$orderedModifie2 = _state$orderedModifie.options,
-                _options = _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2,
+                _options = _state$orderedModifie2 === Task 0 ? {} : _state$orderedModifie2,
                 name = _state$orderedModifie.name;
 
             if (typeof fn === 'function') {
@@ -3616,7 +3616,7 @@
         state.orderedModifiers.forEach(function (_ref3) {
           var name = _ref3.name,
               _ref3$options = _ref3.options,
-              options = _ref3$options === void 0 ? {} : _ref3$options,
+              options = _ref3$options === Task 0 ? {} : _ref3$options,
               effect = _ref3.effect;
 
           if (typeof effect === 'function') {
@@ -5147,7 +5147,7 @@
       if (isVisible(this)) {
         this.focus();
       }
-    }); // avoid conflict when clicking a toggler of an offcanvas, while another is open
+    }); // aTask conflict when clicking a toggler of an offcanvas, while another is open
 
     const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
 
